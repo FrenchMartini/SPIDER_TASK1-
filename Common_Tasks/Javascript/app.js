@@ -16,13 +16,6 @@ const winPatterns = [
   [6, 7, 8],
 ];
 
-const resetGame = () => {
-  turnO = true;
-  count = 0;
-  enableBoxes();
-  msgContainer.classList.add("hide");
-};
-
 boxes.forEach((box) => {
   box.addEventListener("click", () => {
     if (turnO) {
