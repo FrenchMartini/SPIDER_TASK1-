@@ -4,7 +4,10 @@
 #Reading through the usernames.csv file while keeping the format in check 
 while IFS=',' read -r username group permission; do
     #Creating users and their home dir
-    sudo useradd -m -d /home/$username 
+    sudo useradd -m -d "/home/$username" "$username"
+    #just for the sake of testing 
+    echo "$username:$username" | sudo chpasswd 
+    sudo groupadd $group 
     # Creating required groups 
     sudo usermod -aG $group $username
     
